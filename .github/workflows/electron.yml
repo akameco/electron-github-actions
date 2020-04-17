@@ -32,6 +32,9 @@ jobs:
       - name: Publish
         run: |
           yarn run dist
+      - name: Cleanup artifacts
+        run: |
+          yarn run clean 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1
         with:

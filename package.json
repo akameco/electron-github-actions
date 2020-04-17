@@ -3,10 +3,11 @@
   "productName": "Electron GitHub Actions",
   "version": "0.2.0",
   "main": "main.js",
-  "private": "true",
+  "private": true,
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "clean": "npx rimraf 'dist/!(*.exe|*.deb|*.AppImage|*.dmg)'"
   },
   "devDependencies": {
     "electron": "^8.2.3",
