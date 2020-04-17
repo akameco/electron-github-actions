@@ -35,11 +35,11 @@ jobs:
       - name: Cleanup artifacts
         run: |
           yarn run clean 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{ matrix.os }}
-          path: dist
+      # - name: Upload artifacts
+        # uses: actions/upload-artifact@v1
+        # with:
+          # name: ${{ matrix.os }}
+          # path: dist
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
