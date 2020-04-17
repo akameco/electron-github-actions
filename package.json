@@ -1,7 +1,9 @@
 {
   "name": "electron-github-actions",
+  "productName": "Electron GitHub Actions",
   "version": "0.1.0",
   "main": "main.js",
+  "private": "true",
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder"

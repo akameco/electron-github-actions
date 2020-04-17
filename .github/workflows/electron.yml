@@ -7,6 +7,9 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     strategy:
       matrix:
         os: [macOS-latest, windows-latest, ubuntu-latest]
@@ -16,13 +19,13 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - name: Use Node.js 10.x
+      - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 12
       - name: yarn install
         run: |
           yarn install
